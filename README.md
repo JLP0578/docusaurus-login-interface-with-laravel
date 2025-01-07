@@ -9,7 +9,7 @@ The contents of the repository correspond to the files to be included in your Do
 
 ## Laravel
 
-C'est très simple pour Laravel, il y a que quelques fichiers a modifié et un a crée. Pour notre cas, on est passé par `Laravel sancutm`, je vous laisse le soin de l'ajouter à votre Laravel.
+It's very simple for Laravel, there are just a few files to modify and one to create. In our case, we used Laravel sancutm, so I'll leave it to you to add it to your Laravel.
 
 > Modify `routes/api.php`
 
