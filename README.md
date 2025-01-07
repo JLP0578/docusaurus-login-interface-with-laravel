@@ -103,19 +103,6 @@ protected $middlewareGroups = [
 ...
 ```
 
-> Modify configuration `App\Http\Middleware\VerifyCsrfToken.php`
-
-```php
-...
-protected $except = [
-        /**
-         * Here, we're disabling CSRF checking for the following route, which isn't optimal. I'll leave it to you to suggest changes to leave CSRF active for this route.
-         */
-        'api/docu/login',
-    ];
-...
-```
-
 > Modify `.env` of Laravel (this is an exemle for localhost, localhost:3000 = Docusaurus, laravel.local = Laravel, both are on my local)
 
 ```
