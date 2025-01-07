@@ -59,20 +59,32 @@ export const GlobalProvider = ({ children }) => {
 
   const loginApi = () => {
     axios
-      .post(AppUrl + "/api/docu/login", {
-        email,
-        password,
+      .get(AppUrl + "/sanctum/csrf-cookie", {
+        withCredentials: true,
       })
       .then((res) => {
         setIsLoad(true);
-        if (res.status == 200) {
-          setBeaver(res.data.token_type + " " + res.data.token);
-          axios.defaults.headers.common["Authorization"] = beaver();
-          verifyValidity();
-        }
-      })
-      .catch((error) => {
-        setMessage(error?.response?.data?.message || "Login failed");
+        axios
+          .post(
+            AppUrl + "/api/docu/login",
+            {
+              email,
+              password,
+            },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            setEmail("");
+            setPassword("");
+            if (res.status == 200) {
+              setBeaver(res.data.token_type + " " + res.data.token);
+              axios.defaults.headers.common["Authorization"] = beaver();
+              verifyValidity();
+            }
+          })
+          .catch((error) => {
+            setMessage(error?.response?.data?.message || "Login failed");
+          });
       })
       .finally(() => {
         setIsLoad(false);
