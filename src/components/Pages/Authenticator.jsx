@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from '../../context/GlobalState';
 
 function Authenticator() {
@@ -14,7 +14,7 @@ function Authenticator() {
       {!isAuth && (
         <div style={styles.container}>
           <form onSubmit={handleLogin} style={styles.form}>
-            <h1 style={styles.title}>Connect</h1>
+            <h1 style={styles.title}>Connexion</h1>
             <input
               type="email"
               placeholder="Email"
@@ -25,7 +25,7 @@ function Authenticator() {
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Mot de passe"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -34,7 +34,7 @@ function Authenticator() {
             {error && <p style={styles.error}>{error}</p>}
             {message && <p style={styles.message}>{message}</p>}
             <button type="submit" style={styles.button}>
-              Login
+              Se connecter
             </button>
           </form>
         </div>
