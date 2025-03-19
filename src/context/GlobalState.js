@@ -31,7 +31,7 @@ export const GlobalProvider = ({ children }) => {
   const verifyValidity = () => {
     if (beaver() != "") {
       axios
-        .get(AppUrl + "/api/docu/valid", {
+        .get(AppUrl + "/api/docusaurus/valid", {
           headers: {
             Authorization: beaver(),
           },
@@ -66,7 +66,7 @@ export const GlobalProvider = ({ children }) => {
         setIsLoad(true);
         axios
           .post(
-            AppUrl + "/api/docu/login",
+            AppUrl + "/api/docusaurus/login",
             {
               email,
               password,
