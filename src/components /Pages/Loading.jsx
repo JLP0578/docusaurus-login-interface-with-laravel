@@ -47,7 +47,7 @@ const Loading = () => {
       styleSheet.insertRule(html("auto!important"), 0);
     }, 1500);
 
-    // clean du timer
+    // Nettoyage du timer
     return () => clearTimeout(timer);
   }, []);
 
@@ -61,7 +61,7 @@ const Loading = () => {
               alt="docusaurus keyboard loading page"
             />
           </div>
-          <p>Loading...</p>
+          <p>Chargement en cours...</p>
         </div>
       )}
     </>
